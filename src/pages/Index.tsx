@@ -119,43 +119,40 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="services" className="py-20 px-4 bg-muted/30">
+      <section id="services" className="py-20 px-4" style={{ backgroundColor: '#8B9D8A' }}>
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary text-center mb-12 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12 animate-fade-in">
             Наши услуги
           </h2>
           <div className="relative px-12 animate-scale-in">
             <Carousel
               opts={{
-                align: "start",
+                align: "center",
                 loop: true,
               }}
               className="w-full"
             >
-              <CarouselContent>
+              <CarouselContent className="-ml-4">
                 {services.map((service, index) => (
-                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                    <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
-                      <div className="relative h-64 overflow-hidden group">
+                  <CarouselItem key={index} className="pl-4 basis-1/3 md:basis-1/4 lg:basis-1/5">
+                    <div className="p-1">
+                      <div className="bg-white rounded-lg p-2 shadow-md">
                         <img
                           src={service.image}
                           alt={service.title}
-                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                          className="w-full aspect-square object-cover rounded"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-6">
-                          <h3 className="text-white text-xl font-semibold">{service.title}</h3>
-                        </div>
                       </div>
-                    </Card>
+                    </div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-0" />
-              <CarouselNext className="right-0" />
+              <CarouselPrevious className="left-0 bg-primary hover:bg-primary/90 text-white border-none" />
+              <CarouselNext className="right-0 bg-primary hover:bg-primary/90 text-white border-none" />
             </Carousel>
           </div>
           <div className="text-center mt-12">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white">
               Все услуги
             </Button>
           </div>
